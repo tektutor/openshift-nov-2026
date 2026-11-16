@@ -4,6 +4,7 @@
 <pre>
 - Kindly leave a message to Training01 user in the chat 
 - In case Chat is disabled for you, you may directly call Palmeto IT Team @ +91 636-618-1818
+- In case of no/delay in response, you may inform the trainer
 </pre>
 
 ## Info - Break Timings
