@@ -105,6 +105,18 @@
 ## Info - Docker High-Level Architecture
 ![Docker](DockerHighLevelArchitecture.png)
 
+## Info - Docker Image
+<pre>
+- is a blueprint/template of a Container
+- usually Container Image has a single application + all its dependencies
+</pre>
+
+## Info - Docker container
+<pre>
+- is an instance of a Docker Image
+- application process that runs in a separate namespace
+</pre>
+
 ## Lab - Finding docker version details
 ```
 docker --version
@@ -118,6 +130,5 @@ docker info
 ```
 docker images
 ```
-
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/5a70488c-4b49-4343-a0b5-aa0b9202dcc2" />
 
