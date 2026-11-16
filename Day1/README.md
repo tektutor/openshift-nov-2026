@@ -103,4 +103,4 @@
 </pre>
 
 ## Info - Docker High-Level Architecture
-![Docker](Docker High Level Architecture.png)
+![Docker](DockerHighLevelArchitecture.png)
