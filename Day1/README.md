@@ -189,3 +189,13 @@ docker ps
 ```
 docker ps -a
 ```
+
+## Lab - Getting inside a running container shell
+```
+docker ps
+docker exec -it ubuntu1-jegan /bin/bash
+hostname
+hostname -i
+ls
+exit
+```
