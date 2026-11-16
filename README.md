@@ -29,3 +29,17 @@ We have got two servers with below configurations
 
 ![server1](server1.png)
 ![server2](server2.png) 
+
+
+## Info - Check if you lab machine has all the tools required
+```
+docker --version
+podman --version
+
+docker images
+podman images
+
+kubectl version
+oc version
+oc get nodes
+```
