@@ -52,3 +52,7 @@
   - easily the server can host 1024 Virtual Machine - each VM allocated with 4 CPU Cores 
 </pre>
 
+# Info - Hypervisor High-Level Architecture
+![Hypervisor](HypervisorHighLevelArchitecture.png)
+
+
