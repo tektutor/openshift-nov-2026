@@ -259,3 +259,4 @@ docker images
 docker rmi hello-world:latest
 docker images
 ```
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/37b9d138-7c52-45f0-ad95-9c734e7cf8d9" />
