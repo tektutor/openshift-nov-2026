@@ -269,3 +269,91 @@ docker ps
 docker logs web1-jegan
 ```
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/4ff54212-d6c8-4f1d-b54a-453a8f858f01" />
+
+
+## Lab - Setting up Loadbalancer using docker containers
+
+Let's create 3 web server containers
+```
+docker run -d --name server1-jegan --hostname server1-jegan nginx:latest
+docker run -d --name server2-jegan --hostname server2-jegan nginx:latest
+docker run -d --name server3-jegan --hostname server3-jegan nginx:latest
+docker ps
+```
+
+Let's create the load-balancer container
+```
+docker run -d --name lb-jegan --hostname lb-jegan -p 8085:80 nginx:latest
+docker ps
+```
+
+As the nginx container by default works as Web server, we need manually configure the lb-container
+to work as a Load Balancer
+
+Let's find the IP addresses of our web server containers
+```
+docker inspect server1-jegan | grep IPA
+docker inspect server2-jegan | grep IPA
+docker inspect server3-jegan | grep IPA
+```
+
+Update the below nginx configuration with the IP addresses of your Web server containers
+```
+
+user  nginx;
+worker_processes  auto;
+
+error_log  /var/log/nginip_hashx/error.log notice;
+pid        /run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    upstream myapp1 {
+        server 172.17.0.5:80;
+        server 172.17.0.7:80;
+        server 172.17.0.8:80;
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://myapp1;
+        }
+    }
+}
+```
+
+Let's copy the nginx.conf from local machine into the lb container
+```
+docker cp nginx.conf lb-jegan:/etc/nginx/nginx.conf
+```
+
+To apply the config changes, we need to restart the lb container
+```
+docker restart lb-jegan
+docker ps
+```
+
+Let's customize the web pages served by our web servers
+```
+echo "Welcome to Server 1" > index.html
+docker cp index.html server1-jegan:/usr/share/nginx/html/index.html
+
+echo "Welcome to Server 2" > index.html
+docker cp index.html server2-jegan:/usr/share/nginx/html/index.html
+
+echo "Welcome to Server 3" > index.html
+docker cp index.html server3-jegan:/usr/share/nginx/html/index.html
+```
+
+At this point you can test your load-balancer from your lab machine firefox web browser
+```
+http://localhost:8085
+http://localhost:8085
+http://localhost:8085
+```
