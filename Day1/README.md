@@ -357,3 +357,15 @@ http://localhost:8085
 http://localhost:8085
 http://localhost:8085
 ```
+
+## Lab - Volume mounting - container using external storage to persists its data
+```
+docker run -dit --name test1-jegan --hostname test1-jegan -v /home/jegan:/myhome ubuntu:latest /bin/bash
+docker ps
+docker exec -it test1-jegan /bin/bash
+ls -l /myhome
+echo "Test file created from container is visible on lab machine" > /myhome/test1.txt
+exit
+
+ls -l /home/jegan/test1.txt
+```
