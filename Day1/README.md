@@ -252,3 +252,10 @@ docker rename c1-jegan ubuntu1-jegan
 docker ps
 ```
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/644398ff-217a-414f-b7a5-e7fef4a25f9c" />
+
+## Lab - Deleting a docker image from local registry
+```
+docker images
+docker rmi hello-world:latest
+docker images
+```
