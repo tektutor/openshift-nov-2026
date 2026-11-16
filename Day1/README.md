@@ -104,3 +104,12 @@
 
 ## Info - Docker High-Level Architecture
 ![Docker](DockerHighLevelArchitecture.png)
+
+## Lab - Finding docker version details
+```
+docker --version
+docker info
+```
+
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/a5b0cbcf-9be3-49c3-ab66-b58835b5dbd9" />
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/4063f02c-cde5-4f15-a51f-5aee4b223254" />
