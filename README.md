@@ -59,7 +59,8 @@ https://forms.cloud.microsoft/r/qUeUxwrQcp
 
 Note
 <pre>
-- While registering for the training, type your full firstname and lastname so that your L&D team will be able to recognize you
+- While registering for the training, type your full firstname and lastname so that your 
+  L&D team will be able to recognize you
 - Do not share your BOFA ID, use your personal email (if required)
 - Do not share your screen
 - Copy/Paste between your machine and cloud machine is disabled as per your Bank policy
