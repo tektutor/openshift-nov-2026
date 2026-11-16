@@ -43,3 +43,5 @@ kubectl version
 oc version
 oc get nodes
 ```
+
+![tools](tools.png)
