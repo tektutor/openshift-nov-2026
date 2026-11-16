@@ -198,6 +198,13 @@ ls
 exit
 ```
 
+## Lab - Deleting a customer image from Local registry
+```
+docker images
+docker rmi hello-world:latest
+docker images
+```
+
 ## Lab - Stopping a running container
 ```
 docker ps
