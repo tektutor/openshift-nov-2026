@@ -260,3 +260,12 @@ docker rmi hello-world:latest
 docker images
 ```
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/37b9d138-7c52-45f0-ad95-9c734e7cf8d9" />
+
+
+## Lab - Creating nginx web server and check its logs
+```
+docker run -d --name web1-jegan --hostname web1-jegan nginx:latest
+docker ps
+docker logs web1-jegan
+```
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/4b1eeaa3-9553-4c09-85ee-d92927e2720a" />
