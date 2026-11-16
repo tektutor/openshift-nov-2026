@@ -182,6 +182,7 @@ ubuntu:latest - name of the docker image and tag/version is latest
 ```
 docker ps
 ```
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/0fef0426-63c8-47bc-b836-eff86103190c" />
 
 ## Lab - Listing all containers even the ones that are not running
 ```
