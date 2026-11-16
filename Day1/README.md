@@ -1,5 +1,3 @@
-# Day 1
-
 ## Info - Hypervisor Overview
 <pre>
 - Hypervisor is nothing but Virtualization
@@ -238,3 +236,12 @@ docker rm -f ubuntu2-jegan
 docker ps -a | grep ubuntu2-jegan
 ```
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/bd09dc77-d9cc-4b81-b294-a5586e5645d7" />
+
+## Lab - Renaming a container
+```
+docker run -dit --name c1-jegan --hostname c1-jegan ubuntu:latest /bin/bash
+docker ps
+docker rename c1-jegan ubuntu1-jegan
+docker ps
+```
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/644398ff-217a-414f-b7a5-e7fef4a25f9c" />
