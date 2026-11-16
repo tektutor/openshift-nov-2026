@@ -22,6 +22,15 @@
        - VMWare Workstation ( Free - Supports Windows & Linux )
        - VMWare Fusion ( Supports only Mac and requires a commercial license )
        - Parallels ( Supports only Mac and requires a commercial license )
+- each OS that runs on top Hypervisor is called a Guest OS
+- Guest OS requires it own Virtual Machine (VM)
+- each Virtual Machine must be allocated with dedicated Hardware resources
+  - CPU Cores ( Actual )
+  - RAM ( Actual )
+  - Storage ( Actual )
+  - Network Card ( Virtual )
+  - Graphics Card ( Virtual )
+- Because every VM requires dedicated H/w resources, this type of Virtualization is called heavy-weight
 </pre>
 
 
