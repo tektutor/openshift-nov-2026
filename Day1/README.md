@@ -199,3 +199,41 @@ hostname -i
 ls
 exit
 ```
+
+## Lab - Stoping a running container
+```
+docker ps
+docker stop ubuntu1-jegan
+docker ps
+```
+
+## Lab - Listing a non-running container
+```
+docker ps -a
+```
+
+## Lab - Starting an exited container
+```
+docker ps -a
+docker start ubuntu1-jegan
+docker ps
+```
+
+## Lab - Restarting a container
+```
+docker restart ubuntu1-jegan
+docker ps | grep ubuntu1-jegan
+```
+
+## Lab - Deleting a running container gracefully
+```
+docker stop ubuntu1-jegan
+docker rm ubuntu1-jegan
+docker ps -a | grep ubuntu1-jegan
+```
+
+## Lab - Deleting a running container forcibly
+```
+docker rm -f ubuntu2-jegan
+docker ps -a | grep ubuntu2-jegan
+```
