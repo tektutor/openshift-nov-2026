@@ -145,3 +145,27 @@ docker images
 docker image inspect mysql:latest
 docker image inspect mysql:9.7.4 
 ```
+
+## Lab - Creating an ubuntu container in background(daemon mode)
+```
+docker run -dit --name ubuntu1-jegan --hostname ubuntu1-jegan ubuntu:latest /bin/bash
+```
+
+Note
+<pre>
+dit - runs the container in background, it stands for interactive terminal
+name - name of the container as referred by docker server
+hostname - used by OS as an alternate to IP address
+ubuntu:latest - name of the docker image and tag/version is latest
+/bin/bash - after creating the container, you wish to launch the bash terminal
+</pre>
+
+## Lab - Listing all running containers
+```
+docker ps
+```
+
+## Lab - Listing all containers even the ones that are not running
+```
+docker ps -a
+```
