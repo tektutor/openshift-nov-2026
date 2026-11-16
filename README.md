@@ -43,5 +43,9 @@ kubectl version
 oc version
 oc get nodes
 ```
-
 ![tools](tools.png)
+
+## Info - Kindly complete the pre-test from Cloud lab machine and confirm in the chat
+```
+https://forms.cloud.microsoft/r/qUeUxwrQcp
+```
