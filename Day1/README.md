@@ -128,6 +128,7 @@
 - Container has its is PID (Process ID namespaces )
 - every container uses about 5~6 namespaces
 - it is for these reasons, people tend to compare a Virtual machine with a container
+- containers has its own network stack ( 7 OSI layers ) just like OS/VMs
 - otherwise, in general comparing a container with a virtual machine is technically wrong
   - Virtual machine represents a fully functional Operating System
   - Container represents one single application
