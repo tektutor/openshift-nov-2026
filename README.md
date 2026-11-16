@@ -22,10 +22,10 @@
 <pre>
 We have got two servers with below configurations
 - Dell PowerEdge R840 Server
-- Intel Xeon Processor with 192 CPU Cores
-
-![server1](server1.png)
-![server2](server2.png)  
+- Intel Xeon Processor with 192 CPU Cores 
 - 1 TB RAM
 - 21 TB SSD
 </pre>
+
+![server1](server1.png)
+![server2](server2.png) 
