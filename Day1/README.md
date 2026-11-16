@@ -101,3 +101,6 @@
   - Docker Container Engine depends on containerd interface which in-turn depends on runC Container Runtime
   - Podman Container Engine depends on CRI-O Container Runtime
 </pre>
+
+## Info - Docker High-Level Architecture
+![Docker](Docker High Level Architecture.png)
