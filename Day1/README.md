@@ -268,4 +268,4 @@ docker run -d --name web1-jegan --hostname web1-jegan nginx:latest
 docker ps
 docker logs web1-jegan
 ```
-<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/4b1eeaa3-9553-4c09-85ee-d92927e2720a" />
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/4ff54212-d6c8-4f1d-b54a-453a8f858f01" />
