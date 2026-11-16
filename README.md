@@ -2,7 +2,7 @@
 
 ## Info - Contact Palmeto for any Lab connectivity issues
 <pre>
-- Kindly leave a message to Trainer01 user in the chat 
+- Kindly leave a message to Training01 user in the chat 
 - In case Chat is disabled for you, you may directly call Palmeto IT Team @ +91 636-618-1818
 </pre>
 
