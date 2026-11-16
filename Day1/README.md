@@ -165,6 +165,8 @@ docker image inspect mysql:9.7.4
 ## Lab - Creating an ubuntu container in background(daemon mode)
 ```
 docker run -dit --name ubuntu1-jegan --hostname ubuntu1-jegan ubuntu:latest /bin/bash
+docker run -dit --name ubuntu2-jegan --hostname ubuntu2-jegan ubuntu:latest /bin/bash
+
 ```
 
 Note
