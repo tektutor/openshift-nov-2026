@@ -113,3 +113,11 @@ docker info
 
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/a5b0cbcf-9be3-49c3-ab66-b58835b5dbd9" />
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/4063f02c-cde5-4f15-a51f-5aee4b223254" />
+
+## Lab - Listing all docker images in your Docker Local Registry
+```
+docker images
+```
+
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/5a70488c-4b49-4343-a0b5-aa0b9202dcc2" />
+
