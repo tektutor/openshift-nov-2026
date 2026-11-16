@@ -132,3 +132,9 @@ docker images
 ```
 <img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/5a70488c-4b49-4343-a0b5-aa0b9202dcc2" />
 
+
+## Lab - Downloading docker image from Remote Registry to Local Registry
+```
+docker pull mysql:9.7.4
+docker images
+```
