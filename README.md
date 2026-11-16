@@ -38,7 +38,7 @@ We have got two servers with below configurations
 ![server2](server2.png) 
 
 
-## Info - Check if you lab machine has all the tools required
+## Info - Check if you lab machine has all the tools required ( Try it in Ubuntu Terminal ) 
 ```
 docker --version
 podman --version
