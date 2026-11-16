@@ -1,5 +1,11 @@
 # Red Hat Openshift 16-20 November 2026
 
+## Info - Contact Palmeto for any Lab connectivity issues
+<pre>
+- Kindly leave a message to Trainer01 user in the chat 
+- In case Chat is disabled for you, you may directly call Palmeto IT Team @ +91 636-618-1818
+</pre>
+
 ## Info - Break Timings
 <pre>
 - First Half Tea break : 11:15 to 11:30 am
