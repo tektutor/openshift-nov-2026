@@ -104,7 +104,7 @@
 
 ## Info - Docker High-Level Architecture
 ![Docker](DockerHighLevelArchitecture.png)
-
+![Docker]()
 ## Info - Docker Image
 <pre>
 - is a blueprint/template of a Container
