@@ -138,3 +138,9 @@ docker images
 docker pull mysql:9.7.4
 docker images
 ```
+
+## Lab - Finding the image layers ( or more detailed info about a docker image )
+```
+docker image inspect mysql:latest
+docker image inspect mysql:9.7.4 
+```
