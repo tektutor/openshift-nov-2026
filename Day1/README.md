@@ -200,7 +200,7 @@ ls
 exit
 ```
 
-## Lab - Stoping a running container
+## Lab - Stopping a running container
 ```
 docker ps
 docker stop ubuntu1-jegan
