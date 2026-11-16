@@ -118,6 +118,22 @@
 - application process that runs in a separate namespace
 </pre>
 
+## Info - Container vs Virtual Machine
+<pre>
+- Containers has its own Network namespace just like Virtual machines
+- Containers has its own file system just like Virtual machine
+- Containers gets one or more IP addresses just like Virtual machines
+- Containers get its own Port range 0-65535 just like Virtual machines
+- Containers has one or more software defined(virtual) network card(s) just like Virtual machines
+- Container has its is PID (Process ID namespaces )
+- every container uses about 5~6 namespaces
+- it is for these reasons, people tend to compare a Virtual machine with a container
+- otherwise, in general comparing a container with a virtual machine is technically wrong
+  - Virtual machine represents a fully functional Operating System
+  - Container represents one single application
+  - hence, comparing MS Word with Ubuntu is technically wrong
+</pre>
+
 ## Lab - Finding docker version details
 ```
 docker --version
