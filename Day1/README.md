@@ -237,3 +237,4 @@ docker ps -a | grep ubuntu1-jegan
 docker rm -f ubuntu2-jegan
 docker ps -a | grep ubuntu2-jegan
 ```
+<img width="1917" height="1120" alt="image" src="https://github.com/user-attachments/assets/bd09dc77-d9cc-4b81-b294-a5586e5645d7" />
