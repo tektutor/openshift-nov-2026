@@ -50,9 +50,54 @@
   - Intel also supports 2 logical core per Physical CPU - it is called Hyperthreading
   - Logical/Virtual CPU Core in total = 2 x 2048 = 4096 Cores
   - easily the server can host 1024 Virtual Machine - each VM allocated with 4 CPU Cores 
+- each VM, represents one fully function Operating System with its own OS Kernel, hardware resources, etc.,
 </pre>
 
 # Info - Hypervisor High-Level Architecture
 ![Hypervisor](HypervisorHighLevelArchitecture.png)
 
+## Info - Containerization
+<pre>
+- Containerization is a light-weight application virtualization technology
+- each Container represents one application process in the Operating System
+- in some cases, more than container put together represents a single application
+- even in a laptop/desktop with regular/decent hardware configuration, we can easily run 10~20 containers
+- firewall/proxy, creating different networks can all be done with software, hence with containers
+  we could simulate many complex scenarios just like how they would run in production, hence many issues
+  could be caught during dev/qa cycle itself
+- this is a linux technology
+  - Linux kernel has 2 features
+    1. Namespace and
+       - helps in isolating one container from the other container
+    2. Control Group
+      - helps in applying container level resource quota restrictions
+        - For instance, we can control, 
+          - how much/many CPU Core one container can access at the max
+          - how much store one container can access at the max
+- Container Runtime
+  - examples
+    - cRun
+    - runC
+    - CRI-O
+- Container Engine
+  - examples
+    - Docker
+    - Podman
+</pre>
 
+## Info - Container Runtime
+<pre>
+- is a low-level software that helps us manage Container images and Containers
+- it is not so user-friendly, hence the end-user don't use this directly
+</pre>
+
+## Info - Container Engine
+<pre>
+- Container Engines are high-level software that helps us manage Container images and Containers
+  without knowing low-level Linux Kernel Container features
+- it provides user-friendly commands to manage images and containers
+- it depends on Container Runtimes to manage Images and Containers
+- examples
+  - Docker Container Engine depends on containerd interface which in-turn depends on runC Container Runtime
+  - Podman Container Engine depends on CRI-O Container Runtime
+</pre>
