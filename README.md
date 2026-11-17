@@ -98,3 +98,14 @@ oc get project
 ```
 oc new-project jegan
 ```
+
+## Lab - Switching between projects
+```
+oc project default
+oc project jegan
+```
+
+## Lab - Finding your current active project
+```
+oc project
+```
