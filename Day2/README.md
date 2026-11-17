@@ -320,5 +320,8 @@ oc get pod
 # List all
 oc get all
 oc get deploy,rs,po
+
+oc get pods -o wide
 ```
 ![nginx](img1.png)
+![nginx](img2.png)
