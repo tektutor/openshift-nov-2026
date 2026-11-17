@@ -430,3 +430,10 @@ oc edit deploy/nginx
 oc edit rs/nginx-78667dbbbb
 oc edit pod/nginx-78667dbbbb
 ```
+
+## Lab - Checking pod logs
+```
+oc project jegan
+oc get pods 
+oc logs pod/nginx-78667dbbbb-cg96x
+```
