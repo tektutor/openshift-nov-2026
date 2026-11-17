@@ -357,3 +357,32 @@ oc get pods -o wide
 # Hence, ReplicaSet Controller automatically replaced the missing pod with a new pod 
 ```
 ![nginx](img5.png)
+
+## Lab - Understanding ImagePullback/ErrImagePull/CrashLoopBackOff errors
+
+```
+# Switch to your project
+oc project jegan
+
+# Deploy an application with non-exiting container image (invalid)
+oc create deployment hello --image=image-registry.openshift-image-registry.svc:5000/openshift/invalid-image:1.25 --replicas=3
+
+oc get pods -w # Press Ctrl+C to come out of watch mode
+
+# The root-cause of ErrImagePullback/ErrImagePull is a typos or you are attempting to use non-existing image
+# It is also possible the Container Registry has the image but you don't have permission to download, maybe
+# it is a private container image registry
+
+# Understanding CrashLoopBackOff error
+# If suppose the application deploy only runs for few seconds/minutes and then it stops(completed), then ReplicaSet controller
+# will attempt to repair it by restarting the Pod, but the application runs inside Pod is originally designed to run only few
+# seconds/minutes, hence it get into a loop which is called CrashLoopBackOff error
+
+# The other reasons for this error could be, the application running inside the Pod is actually crashing as it might be
+# attempting to connect to a database which doesn't exist, or db connection failed due to wrong credentials, or
+# it is attempting to open some config file which is missing, or due to insufficent disk space it is crashing
+oc create deployment testapp --image=image-registry.openshift-image-registry.svc:5000/openshift/nginx:1.20-ubi9
+
+oc get pods -w
+
+```
