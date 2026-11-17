@@ -356,3 +356,4 @@ oc get pods -o wide
 # As you can notice, ReplicaSet controller got a notification as soon as one pod was deleted
 # Hence, ReplicaSet Controller automatically replaced the missing pod with a new pod 
 ```
+![nginx](img5.png)
