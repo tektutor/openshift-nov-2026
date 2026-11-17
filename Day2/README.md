@@ -70,5 +70,22 @@
 
 ## Info - Red Hat Openshift
 <pre>
-  
+- it is Red Hat's distribution of Kubernetes
+- Openshift supports everything that Kubernetes support + many addition features
+- it is developed on top of opensource Kubernetes
+- it supports both CLI and Webconsole
+- it supports User Management
+  - hence Role Based Access Control is possible
+- it supports deploying applications
+  - from Container Image just like Kubernetes
+  - as well from source code, it is called S2I (Source to Image)
+- it supports features like
+  - Webconsole
+  - User Management
+  - Build
+  - BuildConfig
+  - Route
+  - Project
+  - ImageStream
+  - Internal Container Registry
 </pre>
