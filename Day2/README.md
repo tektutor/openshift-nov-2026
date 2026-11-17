@@ -252,3 +252,4 @@ kubectl version
 oc version
 oc get nodes
 ```
+![login](cli-login.png)
