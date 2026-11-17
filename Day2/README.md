@@ -437,3 +437,34 @@ oc project jegan
 oc get pods 
 oc logs pod/nginx-78667dbbbb-cg96x
 ```
+
+## Info - Service
+<pre>
+- Service represents a group of load-balanced pods from a single deployment
+- As Pods are ephemeral, i.e they can be replaced during scale up/down, or rolling update, etc.,
+  we need something stable to refer while programming, that's where Service helps
+- Services gives a stable name and IP address for all the pods from a single deployment
+- Service name and Service IP address once assigned, they will never change unless deleted
+- Hence, applications are recommended to refer a service name, the dns in the Openshift resolves
+  the Service name to its respective IP address, this is called Service Discovery
+- there are 2 types of Services
+  1. Internal Service
+     - ClusterIP  ( this can be accessed only from other Pods running in the same cluster )
+  2. External
+     - NodePort ( this can be accessed outside the cluster, within the same network )
+     - LoadBalancer ( this can be accessed over Internet, this type of Service is meant to be used in public cloud like AWS, Azure, etc )
+</pre>
+
+## Lab - Creating a ClusterIP Internal Service for our nginx deployment
+```
+oc project jegan
+oc get deploy
+oc expose deploy/nginx --type=ClusterIP --port=8080
+
+oc get services
+oc get service
+oc get svc
+
+oc describe svc/nginx
+```
+
