@@ -341,3 +341,18 @@ curl http://localhost:9090
 ![nginx](img4.png)
 
 Port forwarding can be stopped by pressing Ctrl+C on Terminal Tab 1, curl on Tab 2 will no more work
+
+## Lab - Openshift self-heals Pods automatically
+```
+oc project jegan
+oc get pods -o wide
+
+# Just testing, let's delete a pod
+oc delete pod/nginx-78667dbbbb-s92gt
+
+# List and see if 3 Pods are still running
+oc get pods -o wide
+
+# As you can notice, ReplicaSet controller got a notification as soon as one pod was deleted
+# Hence, ReplicaSet Controller automatically replaced the missing pod with a new pod 
+```
