@@ -66,3 +66,15 @@ Note
 - Do not share your screen
 - Copy/Paste between your machine and cloud machine is disabled as per your Bank policy
 </pre>
+
+
+## Info - Finding details of a node
+```
+oc describe node/master01.ocp4.palmeto.org
+oc describe node/master02.ocp4.palmeto.org
+oc describe node/master03.ocp4.palmeto.org
+
+oc describe node/worker01.ocp4.palmeto.org
+oc describe node/worker02.ocp4.palmeto.org
+oc describe node/worker03.ocp4.palmeto.org
+```
