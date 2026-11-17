@@ -339,3 +339,5 @@ curl http://localhost:9090
 ```
 ![nginx](img3.png)
 ![nginx](img4.png)
+
+Port forwarding can be stopped by pressing Ctrl+C on Terminal Tab 1, curl on Tab 2 will no more work
