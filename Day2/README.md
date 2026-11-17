@@ -384,6 +384,7 @@ oc get pods -w # Press Ctrl+C to come out of watch mode
 oc create deployment testapp --image=image-registry.openshift-image-registry.svc:5000/openshift/nginx:1.20-ubi9
 
 oc get pods -w
+oc describe pod/testapp-5794b88bb6-8q922
 
 ```
 ![nginx](img6.png)
