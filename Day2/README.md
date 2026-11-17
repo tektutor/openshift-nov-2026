@@ -91,3 +91,72 @@
 - as it is an enterprise product that requires license, it also comes with world-wide support from 
   Red Hat ( an IBM company )
 </pre>
+
+## Info - Types of applications that can be deployed in Kubernetes/Openshift
+<pre>
+- Stateless application
+- Stateful applications
+- One time application ( Job )
+- Recurring application ( CronJob )
+- Application that runs in every node ( DaemonSet )
+</pre>
+
+## Info - Kubernetes/Openshift Jargons ( terms or resource types )
+<pre>
+- Pod
+- ReplicaSet
+- Deployment
+- StatefulSet
+- DaemonSet
+- Job
+- CronJob
+- Service
+- Ingress
+- Route
+- ImageStream
+- Project
+</pre>
+
+## Info - Pod
+<pre>
+- Pod is a logical grouping of related containers
+- this is applications will be running as a container
+- each Pod may have one or more Containers in it
+- IP Address is assigned on the Pod level ( not on the container level )
+</pre>
+
+## Info - ReplicaSet
+<pre>
+- In case of Stateless applications, Kubernetes/Openshift makes use of ReplicaSet configuration object resource
+  to capture details like
+  - The container image that must be used to deploy your application
+  - number of instances of your applications that must be running
+- ReplicaSet configuration is taken as an input by a Controlled called ReplicaSet Controller
+- ReplicaSet are created by Deployment Controller, while ReplicaSet controller acts based on ReplicaSet definition
+- ReplicaSet Controller comes to know whenever a ReplicaSet changes by way of event notifications
+</pre>
+
+## Info - Deployment
+<pre>
+- in case of Stateless applications, Kubernetes/Openshift makes use of Deployment to represent the Stateless application
+- this resource captures the details below
+  - name of the application
+  - container image that must be used to deploy the application
+  - expected number of application instances ( Pods ) 
+- Deployment Controller takes Deployment Configuration object as input and acts
+- Deployment Controller comes to know about changes done to the Deployment by way of event notifications
+</pre>
+
+## Info - StatefulSet
+<pre>
+- this is used to deploy stateful applications
+- managing this kind of applications is more complicated and tricky compared to stateless application
+- Kubernetes/Openshift provide the basic StatefulSet type of resource to indicate it is a stateful application
+  but otherwise, making the Pods instances work like a cluster is our responsibility
+- examples
+  - we need to deploy a cluster of mysql database servers
+  - when one mysql pod instance is updated with some data, the other mysql instances
+    automatically gets synchronized with the updated data
+</pre>
+
+##
