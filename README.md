@@ -137,4 +137,4 @@ oc get pod
 oc get all
 oc get deploy,rs,po
 ```
-![nginx]()
+![nginx](img1.png)
