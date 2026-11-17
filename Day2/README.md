@@ -414,3 +414,11 @@ exit
 oc exec -it pod/nginx-78667dbbbb-cg96x -- /bin/sh
 exit
 ```
+
+## Lab - Find more details about deployment, replicaset, pods
+```
+oc project jegan
+oc describe deploy/nginx
+oc describe rs/nginx-78667dbbbb
+oc describe pod/nginx-78667dbbbb
+```
