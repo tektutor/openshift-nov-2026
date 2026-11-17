@@ -478,4 +478,5 @@ oc get pods
 oc exec -it pod/hello-fcbdc9989-67c88 -- /bin/sh
 curl http://nginx:8080
 curl http://172.30.244.75:8080
+exit
 ```
