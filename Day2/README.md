@@ -467,4 +467,4 @@ oc get svc
 
 oc describe svc/nginx
 ```
-
+![service](img10.png)
