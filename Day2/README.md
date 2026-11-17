@@ -299,6 +299,13 @@ oc project jegan
 oc project
 ```
 
+## Lab - Deleting a project
+```
+# Kindly make sure you are only deleting your project
+# Deleting other system project will corrupt openshift, so kindly avoid it
+oc delete project jegan
+```
+
 ## Lab - Deploying your first stateless application into Openshift
 ```
 # Switch to your project
