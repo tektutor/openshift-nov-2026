@@ -338,3 +338,4 @@ oc port-forward  pod/nginx-78667dbbbb-cg96x 9090:8080
 curl http://localhost:9090
 ```
 ![nginx](img3.png)
+![nginx](img4.png)
