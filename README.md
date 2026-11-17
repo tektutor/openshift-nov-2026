@@ -80,3 +80,16 @@ oc describe node/worker01.ocp4.palmeto.org
 oc describe node/worker02.ocp4.palmeto.org
 oc describe node/worker03.ocp4.palmeto.org
 ```
+
+## Info - Listing all namespaces/projects
+```
+# Plural
+oc get namespaces
+# Singular
+oc get namespace
+# Short-form
+oc get ns
+
+oc get projects
+oc get project
+```
