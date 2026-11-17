@@ -230,3 +230,11 @@
   2. Red Hat Enterprise Core OS ( RHCOS ) - Recommended
 - When we install RHCOS in master and worker nodes, using oc command, we can upgrade a cluster
 </pre>
+
+## Info - Kubernetes/Openshift tools
+<pre>
+kubectl - kubernetes client tool
+kubeadm - kubernetes admin tool
+oc - openshift client
+   - this combines the admin kubeadm and kubectl 
+</pre>
