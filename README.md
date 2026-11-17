@@ -49,6 +49,7 @@ podman images
 kubectl version
 oc version
 oc get nodes
+oc get nodes -o wide
 ```
 ![tools](tools.png)
 
