@@ -109,3 +109,32 @@ oc project jegan
 ```
 oc project
 ```
+
+## Lab - Deploying your first stateless application into Openshift
+```
+# Switch to your project
+oc project jegan
+
+# Deploy nginx 
+oc create deployment nginx --image=image-registry.openshift-image-registry.svc:5000/openshift/bitnami-nginx:1.25 --replicas=3
+
+# List deployments
+oc get deployments
+oc get deployment
+oc get deploy
+
+# List replicasets
+oc get replicasets
+oc get replicaset
+oc get rs
+
+# List pods
+oc get pods
+oc get pod
+oc get pod
+
+# List all
+oc get all
+oc get deploy,rs,po
+```
+![nginx]()
