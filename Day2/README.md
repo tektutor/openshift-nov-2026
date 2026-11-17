@@ -480,3 +480,27 @@ curl http://nginx:8080
 curl http://172.30.244.75:8080
 exit
 ```
+
+## Lab - Creating an external NodePort service for nginx deployment
+```
+oc project jegan
+
+oc get deploy
+
+# Delete the existing clusterip service
+oc delete svc/nginx
+
+# Create a nodeport external service
+oc expose deploy/nginx --type=NodePort --port=8080
+
+oc get svc
+oc describe svc/nginx
+
+curl http://<any-node-ip>:<node-port>
+curl http://master01.ocp4.palmeto.org:31250
+curl http://master02.ocp4.palmeto.org:31250
+curl http://master03.ocp4.palmeto.org:31250
+curl http://worker01.ocp4.palmeto.org:31250
+curl http://worker02.ocp4.palmeto.org:31250
+curl http://worker03.ocp4.palmeto.org:31250
+```
