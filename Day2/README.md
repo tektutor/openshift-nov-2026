@@ -468,3 +468,14 @@ oc get svc
 oc describe svc/nginx
 ```
 ![service](img10.png)
+
+Accessing the ClusterIP Service from a test pod
+```
+oc get imagestream/hello -n openshift
+oc create deploy hello --image=image-registry.openshift-image-registry.svc:5000/openshift/hello:1.0
+oc get pods
+
+oc exec -it pod/hello-fcbdc9989-67c88 -- /bin/sh
+curl http://nginx:8080
+curl http://172.30.244.75:8080
+```
