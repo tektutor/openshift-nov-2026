@@ -325,3 +325,16 @@ oc get pods -o wide
 ```
 ![nginx](img1.png)
 ![nginx](img2.png)
+
+## Lab - Port forward ( Helpful for developers not for production )
+```
+oc project jegan
+oc get pods
+
+# Terminal Tab 1,make sure the port 9090 is replaced with some non-conflicts available port
+oc port-forward  pod/nginx-78667dbbbb-cg96x 9090:8080
+
+# Terminal Tab 2
+curl http://localhost:9090
+```
+![nginx](img3.png)
