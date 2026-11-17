@@ -420,7 +420,7 @@ exit
 oc project jegan
 oc describe deploy/nginx
 oc describe rs/nginx-78667dbbbb
-oc describe pod/nginx-78667dbbbb
+oc describe pod/nginx-78667dbbbb-cg96x
 ```
 
 ## Lab - Editing deployment, replicaset, pods
@@ -428,7 +428,7 @@ oc describe pod/nginx-78667dbbbb
 oc project jegan
 oc edit deploy/nginx
 oc edit rs/nginx-78667dbbbb
-oc edit pod/nginx-78667dbbbb
+oc edit pod/nginx-78667dbbbb-cg96x
 ```
 
 ## Lab - Checking pod logs
