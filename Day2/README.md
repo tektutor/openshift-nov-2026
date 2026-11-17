@@ -386,3 +386,8 @@ oc create deployment testapp --image=image-registry.openshift-image-registry.svc
 oc get pods -w
 
 ```
+![nginx](img6.png)
+![nginx](img7.png)
+![nginx](img8.png)
+![nginx](img9.png)
+
