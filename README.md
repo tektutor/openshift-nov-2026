@@ -70,7 +70,7 @@ Note
 </pre>
 
 
-## Info - Finding details of a node ( Only Openshift administrators can run this - it work in our lab but not in your bank as a developer )
+## Lab - Finding details of a node ( Only Openshift administrators can run this - it work in our lab but not in your bank as a developer )
 ```
 oc describe node/master01.ocp4.palmeto.org
 oc describe node/master02.ocp4.palmeto.org
@@ -81,7 +81,7 @@ oc describe node/worker02.ocp4.palmeto.org
 oc describe node/worker03.ocp4.palmeto.org
 ```
 
-## Info - Listing all namespaces/projects
+## Lab - Listing all namespaces/projects
 ```
 # Plural
 oc get namespaces
@@ -92,4 +92,9 @@ oc get ns
 
 oc get projects
 oc get project
+```
+
+## Lab - Creating a project
+```
+oc new-project jegan
 ```
