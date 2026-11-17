@@ -41,6 +41,7 @@
 <pre>
 - it is a Container Orchestration Platform developed by Google
 - originally it was developed and used within Google as Borg
+- Kubernetes is developed in Golang
 - After using Borg in several complex projects internally, Google refactored, improved it and made it as a opensource tool
   as Kubernetes
 - it is a robust, opensource, production-grade Container Orchestration Platform
@@ -59,4 +60,15 @@
 - applications are deploy as Pod
 - Pod is the smallest unit we can deploy into Kubernetes
 - Kubernetes is also called in short as K8s
+- it provides all the basic boilerplate features required to extend Kubernetes
+  - For instance
+    - it supports adding a new type of Resource in Kubernetes by defining a Custom Resource Definition (CRD) in a yaml file
+    - to manage custom resources, we also need to provide a custom controller
+    - the combination of one or more Custom Resources and one or more Controllers is called Kubernetes Operator
+    - this is way we can extend Kubernetes API ( features )
+</pre>
+
+## Info - Red Hat Openshift
+<pre>
+  
 </pre>
