@@ -497,6 +497,7 @@ oc get svc
 oc describe svc/nginx
 
 curl http://<any-node-ip>:<node-port>
+curl http://<any-node-hostname>:<node-port>
 curl http://master01.ocp4.palmeto.org:31250
 curl http://master02.ocp4.palmeto.org:31250
 curl http://master03.ocp4.palmeto.org:31250
