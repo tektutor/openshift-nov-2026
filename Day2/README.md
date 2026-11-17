@@ -88,4 +88,6 @@
   - Project
   - ImageStream
   - Internal Container Registry
+- as it is an enterprise product that requires license, it also comes with world-wide support from 
+  Red Hat ( an IBM company )
 </pre>
