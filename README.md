@@ -48,6 +48,8 @@ podman images
 
 kubectl version
 oc version
+
+# Only Openshift administrators can run this - it work in our lab but not in your bank as a developer
 oc get nodes
 oc get nodes -o wide
 ```
@@ -68,7 +70,7 @@ Note
 </pre>
 
 
-## Info - Finding details of a node
+## Info - Finding details of a node ( Only Openshift administrators can run this - it work in our lab but not in your bank as a developer )
 ```
 oc describe node/master01.ocp4.palmeto.org
 oc describe node/master02.ocp4.palmeto.org
