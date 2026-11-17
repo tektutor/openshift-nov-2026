@@ -216,7 +216,17 @@
   - it has only those linux tools required for Container Orchestration Platform
   - it comes with CRI-O Container Runtime and Podman Container Engine pre-install
   - each version of RHCOS, comes with one specific version of CRI-O and Podman
+  - enforces best-practices are followed
+  - it restricts ports below 1024, as they are reserved for internal use in Openshift 
+  - it won't allow running applications with root user/access
+  - only root-less container images are allowed for normal user applications
 </pre>
 
-
 ## Info - Kubernetes/Openshift Worker Node
+<pre>
+- Kubernetes/Rancher allows installing any Linux OS on worker nodes
+- Openshift allows installing either
+  1. Red Hat Enterprise Linux ( RHEL )  or
+  2. Red Hat Enterprise Core OS ( RHCOS ) - Recommended
+- When we install RHCOS in master and worker nodes, using oc command, we can upgrade a cluster
+</pre>
