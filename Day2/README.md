@@ -422,3 +422,11 @@ oc describe deploy/nginx
 oc describe rs/nginx-78667dbbbb
 oc describe pod/nginx-78667dbbbb
 ```
+
+## Lab - Editing deployment, replicaset, pods
+```
+oc project jegan
+oc edit deploy/nginx
+oc edit rs/nginx-78667dbbbb
+oc edit pod/nginx-78667dbbbb
+```
