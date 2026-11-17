@@ -92,6 +92,11 @@
   Red Hat ( an IBM company )
 </pre>
 
+## Info - Openshift High-Level Architecture
+![architeture](KubernetesArchitecture2.png)
+![architecture](openshiftArchitecture.png)
+![architecture](master-node.png)
+
 ## Info - Types of applications that can be deployed in Kubernetes/Openshift
 <pre>
 - Stateless application
