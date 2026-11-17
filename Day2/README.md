@@ -397,3 +397,13 @@ oc describe pod/testapp-5794b88bb6-8q922
 ![nginx](img8.png)
 ![nginx](img9.png)
 
+
+## Lab - Getting inside a Pod shell
+```
+oc project jegan
+oc get pods
+oc rsh deploy/nginx
+exit
+oc exec -it pod/nginx-78667dbbbb-cg96x -- /bin/sh
+exit
+```
