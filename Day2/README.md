@@ -199,3 +199,24 @@
 - through Project, we can control who gets access to an application
 - it is a way one team can segregate their application from other teams application deployments
 </pre>
+
+## Info - Kubernetes/Openshift Master Node
+<pre>
+- Control Plane components will run only in the master node (Linux Server) 
+- Control Plane is the heart/brain of Container Orchestration Platform
+- What are the components in Control Plane
+  1. API Server
+  2. etcd key/value distributed datastore
+  3. Scheduler
+  4. Controller Managers ( a collection of many Controller )
+- In case of Kubernetes/Rancher, the master nodes are allowed to install any Linux OS
+- In case of Openshift, the master nodes should install only Red Hat Enterprise CoreOS ( RHCOS )
+- RHCOS
+  - is a optimized, secured, minimal Linux
+  - it has only those linux tools required for Container Orchestration Platform
+  - it comes with CRI-O Container Runtime and Podman Container Engine pre-install
+  - each version of RHCOS, comes with one specific version of CRI-O and Podman
+</pre>
+
+
+## Info - Kubernetes/Openshift Worker Node
