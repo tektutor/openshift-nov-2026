@@ -238,3 +238,17 @@ kubeadm - kubernetes admin tool
 oc - openshift client
    - this combines the admin kubeadm and kubectl 
 </pre>
+
+## Lab - Login to Openshift from linux command line
+```
+cat ~/openshift.txt
+# Server 1
+oc login -u kubeadmin -p AR3IT-vpADW-fPNeV-pfTxP https://api.ocp4.palmeto.org:6443 --insecure-skip-tls-verify=true
+
+# Server 2
+oc login -u kubeadmin -p svLca-YIuun-vBRV6-r35nG https://api.ocp4.palmeto.org:6443 --insecure-skip-tls-verify=true
+
+kubectl version
+oc version
+oc get nodes
+```
