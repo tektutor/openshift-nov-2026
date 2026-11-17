@@ -159,4 +159,43 @@
     automatically gets synchronized with the updated data
 </pre>
 
-##
+## Info - Job
+<pre>
+- the application runs as a Pod for few second/minutes and marks as Complete
+- this is meant to be use for any one-time activity
+- example
+  - you need to take backup of data
+</pre>
+
+## Info - CronJob
+<pre>
+- for any recurring activity, this is used
+- example
+  - let's say we would like to take backup every Friday, midnight
+</pre>
+
+
+## Info - Service
+<pre>
+- applications are going to run as Pod
+- Pods are considered ephemeral ( temporary ), they come and go 
+- Service represents a group of load-balance pods
+- Service gets a stable name and IP address, which will never change unless we changed it
+- hence, we can reliably use service while interacting with Pods
+- one Pod is not supposed to interact with other Pod directly, they must communicate via a Service
+- there are broadly classified as
+  1. Internal Service
+     - ClusterIP Service
+  2. External Service
+     - NodePort Service
+     - LoadBalancer Service
+</pre>
+
+## Info - Project
+<pre>
+- Openshift created Project based Kubernetes namespace features
+- If a team would like deploy one or more applications that only their team members should access, 
+  that's where Project comes in handy
+- through Project, we can control who gets access to an application
+- it is a way one team can segregate their application from other teams application deployments
+</pre>
