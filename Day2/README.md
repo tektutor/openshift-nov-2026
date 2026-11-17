@@ -315,7 +315,7 @@ oc get rs
 # List pods
 oc get pods
 oc get pod
-oc get pod
+oc get po
 
 # List all
 oc get all
