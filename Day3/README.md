@@ -43,6 +43,10 @@ oc describe svc/nginx
 ## Lab - Using Openshift Webconsole
 ```
 cat ~/openshift.txt
+
+oc whoami --show-console
+
+
 # Open the below url in firefox browser on your Ubuntu Cloud machine
 https://console-openshift-console.apps.ocp4.palmeto.org
 ```
