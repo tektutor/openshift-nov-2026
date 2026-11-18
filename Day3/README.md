@@ -117,3 +117,32 @@ ab -n 250000 -c 200 http://nginx-jegan1.apps.ocp4.palmeto.org/
 # Terminal window 2
 oc get pods -w
 ```
+
+## Info - Persistent Volume (PV)
+<pre>
+- it is an external storage used by application Pods in Kubernetes/Openshift/Rancher/eks/aks/ROSA
+- it is created by Openshift Administrators either manually/dynamically
+- In order to create the PV dynamically, the Administrators has to a StorageClass
+- AWS StorageClass will have login credentials for AWS, to create S3 buckets
+- NFS StorageClass it know how to export a folder in NFS server
+- The advantage of dynamic PV provisioning is that, whenever any application is requesting
+  for external PV storage, the StorageClass will automatically create it and let your
+  application use that storage
+- The static/manual provisioning of PV requires, raising a ticket to your IT team, the IT
+  team will create a PV for your project 
+</pre>
+
+## Info - Persistent Volume Claim (PVC)
+<pre>
+- any Pod that needs external storage has to ask to for it explicitly by creating a PVC
+- PVC will say
+  - how much disk space your application needs in MB/GB/TB
+  - Access permissions like ReadWriteOnce, ReadWriteMany, etc.,
+  - Do you expect the storage to come from any specific AWS S3, NFS by mentioning the storageclass name
+- Storage Controller will scan the cluster for a matching PV
+  - matching PV for PVC will have
+    - the exact storage capacity (size)
+    - exact access permissions
+    - storageclass ( if PV has mentioned it )
+  - if there is a matching PV found, then the PVC will be allowed to go and bound/claim it and use it
+</pre>
