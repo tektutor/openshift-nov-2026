@@ -76,3 +76,19 @@ https://console-openshift-console.apps.ocp4.palmeto.org
 - In order to get an get external IP and configure a LoadBalancer similar to ALB in our local setup, we can use use MetalLB operator to
   support LoadBalancer on a local openshift/kubernetes cluster
 </pre>
+
+## Lab - Creating a LoadBalancer service declaratively
+```
+oc project jegan
+
+oc get deploy
+oc expose deploy/nginx --type=LoadBalancer --port=8080 --dry-run=client -o yaml
+oc expose deploy/nginx --type=LoadBalancer --port=8080 --dry-run=client -o yaml > nginx-lb-svc.yml
+
+oc apply -f nginx-lb-svc.yml
+
+oc get svc
+oc describe svc/nginx
+
+curl http://192.168.100.50:8080
+```
