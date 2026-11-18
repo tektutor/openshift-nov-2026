@@ -94,3 +94,30 @@ oc describe svc/nginx
 
 curl http://192.168.100.50:8080
 ```
+
+## Lab - Pod auto-scaling
+Clone the TekTutor Training Repository if you haven't done it already
+```
+cd ~
+git clone https://github.com/tektutor/openshift-nov-2026.git
+cd openshift-nov-2026
+cd Day3/auto-scaling
+oc project jegan
+oc apply -f hello-deploy.yml
+oc apply -f hello-hpa.yml
+oc expose deploy/nginx --port=8080
+oc expose svc/nginx 
+
+oc get hpa
+oc get pods
+
+# Terminal window 1
+ab -n 250000 -c 200 http://nginx-jegan1.apps.ocp4.palmeto.org/
+
+# Terminal window 2
+oc get pods -w
+```
+
+```
+ 
+```
