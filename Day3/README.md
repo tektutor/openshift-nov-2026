@@ -117,7 +117,3 @@ ab -n 250000 -c 200 http://nginx-jegan1.apps.ocp4.palmeto.org/
 # Terminal window 2
 oc get pods -w
 ```
-
-```
- 
-```
