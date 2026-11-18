@@ -17,7 +17,7 @@ oc create deploy nginx --image=image-registry.openshift-image-registry.svc:5000/
 cat nginx-deploy.yml
 
 # Declaratively deploy the nginx into Openshift
-oc create -f nginx-deploy.yml --save-config=yes
+oc create -f nginx-deploy.yml --save-config=true
 
 # List and check
 oc get deploy,rs,po
