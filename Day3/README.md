@@ -38,6 +38,11 @@ oc create -f nginx-clusterip-svc.yml --save-config=true
 
 oc get svc
 oc describe svc/nginx
+```
 
-
+## Lab - Using Openshift Webconsole
+```
+cat ~/openshift.txt
+# Open the below url in firefox browser on your Ubuntu Cloud machine
+https://console-openshift-console.apps.ocp4.palmeto.org
 ```
