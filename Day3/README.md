@@ -82,6 +82,8 @@ https://console-openshift-console.apps.ocp4.palmeto.org
 oc project jegan
 
 oc get deploy
+oc delete svc/nginx
+
 oc expose deploy/nginx --type=LoadBalancer --port=8080 --dry-run=client -o yaml
 oc expose deploy/nginx --type=LoadBalancer --port=8080 --dry-run=client -o yaml > nginx-lb-svc.yml
 
