@@ -146,3 +146,26 @@ oc get pods -w
     - storageclass ( if PV has mentioned it )
   - if there is a matching PV found, then the PVC will be allowed to go and bound/claim it and use it
 </pre>
+
+## Lab - Deploying multi-pod wordpress and mysql application
+```
+cd ~/openshift-nov-2026
+git pull
+cd Day3/wordpress-with-configmaps-and-secrets/
+sed -i 's/jegan/your-linux-username/g' *.yml
+
+# Check your NFS path reserved for your wordpress and mysql deployments
+showmount -e localhost | grep your-linux-username
+
+oc project jegan1
+./deploy.sh
+
+oc get pv,pc
+oc get pods
+oc get route
+
+oc logs mysql-6dbc55856c-8xkwp
+oc logs wordpress-b796676bf-dnpw9
+
+
+```
