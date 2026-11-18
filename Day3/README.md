@@ -50,3 +50,15 @@ oc whoami --show-console
 # Open the below url in firefox browser on your Ubuntu Cloud machine
 https://console-openshift-console.apps.ocp4.palmeto.org
 ```
+![webconsole](img11.png)
+![webconsole](img12.png)
+![webconsole](img13.png)
+![webconsole](img14.png)
+![webconsole](img15.png)
+![webconsole](img16.png)
+![webconsole](img17.png)
+![webconsole](img18.png)
+![webconsole](img19.png)
+![webconsole](img20.png)
+![webconsole](img21.png)
+![webconsole](img22.png)
