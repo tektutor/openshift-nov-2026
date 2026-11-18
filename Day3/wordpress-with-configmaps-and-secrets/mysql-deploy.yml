@@ -17,10 +17,10 @@ spec:
       volumes:
       - name: mysql-storage
         persistentVolumeClaim:
-          claimName: mysql-pvc-sriram  #Replace 'sriram' with your name
+          claimName: mysql-pvc-jegan  #Replace 'jegan' with your name
       containers:
       - name: mysql
-        image: image-registry.openshift-image-registry.svc:5000/openshift/bitnami-mysql:latest
+        image: image-registry.openshift-image-registry.svc:5000/openshift/bitnami-mysql:1.0
         imagePullPolicy: IfNotPresent
 
         volumeMounts:

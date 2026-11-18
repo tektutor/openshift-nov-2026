@@ -17,12 +17,11 @@ spec:
       volumes:
       - name: wordpress-storage
         persistentVolumeClaim:
-          claimName: wordpress-pvc-sriram  #Replace 'sriram' with your name
+          claimName: wordpress-pvc-jegan  #Replace 'jegan' with your name
 
       containers:
       - name: wordpress
-        image: image-registry.openshift-image-registry.svc:5000/openshift/bitnami-wordpress:latest
-
+        image: image-registry.openshift-image-registry.svc:5000/openshift/bitnami-wordpress:1.0
         imagePullPolicy: IfNotPresent
 
         volumeMounts:
