@@ -20,6 +20,6 @@ spec:
         name: nginx
         resources:
           requests:
-            cpu: 50m
+            cpu: 100m
           limits:
             cpu: 200m
