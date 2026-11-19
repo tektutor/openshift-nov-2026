@@ -20,7 +20,7 @@ kind: BuildConfig
 metadata:
   name: app-maven-builder
 spec:
-  runPolicy: serial
+  runPolicy: Serial
   source:
     type: Git
     git:
@@ -58,7 +58,7 @@ spec:
         kind: ImageStreamTag
         name: app-builder:latest
       paths:
-      - sourcePath: /deployments/target/app.jar
+      - sourcePath: /deployments/spring-hello-1.0.jar
         destinationDir: ./
   strategy:
     type: Source
