@@ -32,5 +32,19 @@ oc expose svc/hello
 
 oc logs -f bc/hello
 oc get route
-curl http://registry.access.redhat.com/ubi8/openjdk-17-runtime:latest
+curl http://hello-jegan1.apps.ocp4.palemeto.org
+```
+
+## Lab - Deploying Java SpringBoot Microservice using S2I Source Strategy
+```
+oc delete project jegan1
+
+oc new-project jegan1
+oc new-app --name=hello https://github.com/tektutor/spring-ms.git --strategy=source
+oc expose svc/hello
+
+oc logs -f bc/hello
+oc get route
+curl http://hello-jegan1.apps.ocp4.palemeto.org
+
 ```
