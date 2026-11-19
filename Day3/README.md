@@ -158,6 +158,7 @@ sed -i 's/jegan/your-linux-username/g' *.yml
 showmount -e localhost | grep your-linux-username
 
 oc project jegan1
+oc delete deploy/nginx svc/nginx route/nginx
 ./deploy.sh
 
 oc get pv,pc
