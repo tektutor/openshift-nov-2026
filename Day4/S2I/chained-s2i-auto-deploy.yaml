@@ -1,0 +1,153 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: app-builder
+spec:
+  lookupPolicy:
+    local: true
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: app-runtime
+spec:
+  lookupPolicy:
+    local: true
+---
+# Stage 1: Build JAR using S2I Java/Maven builder image
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: app-maven-builder
+spec:
+  runPolicy: serial
+  source:
+    type: Git
+    git:
+      uri: https://github.com/tektutor/spring-ms.git
+      ref: master
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: java:17
+      incremental: true
+      env:
+        - name: MAVEN_ARGS_APPEND
+          value: "-DskipTests"
+  output:
+    to:
+      kind: ImageStreamTag
+      name: app-builder:latest
+  triggers:
+  - type: ConfigChange
+---
+# Stage 2: Extract build JAR into minimal runtime S2I image
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: app-runtime
+spec:
+  runPolicy: Serial
+  source:
+    type: Image
+    images:
+    - from:
+        kind: ImageStreamTag
+        name: app-builder:latest
+      paths:
+      - sourcePath: /deployments/target/app.jar
+        destinationDir: ./
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: ubi-minimal-runtime:latest
+  output:
+    to:
+      kind: ImageStreamTag
+      name: app-runtime:latest
+  triggers:
+  - type: ConfigChange
+  - type: ImageChange
+    imageChange:
+      from:
+        kind: ImageStreamTag
+        name: app-builder:latest
+---
+# Stage 3: Auto-deploy whenever app-runtime:latest is updated
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-runtime
+  annotations:
+    image.openshift.io/triggers: |
+      [
+        {
+          "from": {
+            "kind": "ImageStreamTag",
+            "name": "app-runtime:latest"
+          },
+         "fieldPath": "spec.template.spec.containers[?(@.name==\"app-runtime\")].image"
+        }
+      ]
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-runtime
+  template:
+    metadata:
+      labels:
+        app: app-runtime
+    spec:
+      containers:
+      - name: app-runtime
+        # Initial placeholder, replaced automatically by the image trigger controller
+        # once app-runtime:latest resolves to a pushed image digest.
+        image: app-runtime:latest
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 15
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-runtime
+spec:
+  selector:
+    app: app-runtime
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: app-runtime
+spec:
+  to:
+    kind: Service
+    name: app-runtime
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
