@@ -48,3 +48,19 @@ oc get route
 curl http://hello-jegan1.apps.ocp4.palemeto.org
 
 ```
+
+## Lab - Building SpringBoot application from TekTutor Code Repository and deploying the application into Openshift
+```
+oc new-project jegan1
+cd ~/openshift-nov-2026
+git pull
+cd Day4/S2I
+oc apply -f chained-s2i-auto-deploy.yaml
+
+oc get buildconfigs
+oc logs -f buildconfig/app-maven-builder
+oc logs -f buildconfig/app-runtime
+
+oc get deploy,svc,route
+# From Webconsole clicke the app-runtime route url ( click the up arrow in Topology view under your project )
+```
