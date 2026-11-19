@@ -23,3 +23,14 @@
 ![s2i](img4.png)
 ![s2i](img5.png)
 ![s2i](img6.png)
+
+## Lab - Deploying Java SpringBoot Microservice using S2I Docker Strategy
+```
+oc new-project jegan1
+oc new-app --name=hello https://github.com/tektutor/spring-ms.git --strategy=docker
+oc expose svc/hello
+
+oc logs -f bc/hello
+oc get route
+curl http://registry.access.redhat.com/ubi8/openjdk-17-runtime:latest
+```
