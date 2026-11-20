@@ -53,6 +53,7 @@ helm install vault hashicorp/vault \
   --set injector.enabled=false
 
 # Check it
+oc get pods -n vault -w
 oc get pods -n vault          # vault-0 should be Running 1/1
 oc get svc -n vault           # service "vault" on port 8200
 oc get route -n vault         # UI URL
