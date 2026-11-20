@@ -55,10 +55,14 @@ oc get nodes -o wide
 ```
 ![tools](tools.png)
 
-## Info - Kindly complete the pre-test from Cloud lab machine and confirm in the chat
+## Info - Kindly complete the post-test from Cloud lab machine and confirm in the chat
 ```
-https://forms.cloud.microsoft/r/qUeUxwrQcp
+[https://forms.cloud.microsoft/r/qUeUxwrQcp](https://forms.cloud.microsoft/r/jkD63EYQhD)
 ```
+## Info - Kindly share your training feedback here
+<pre>
+https://forms.cloud.microsoft/r/1ncd8yMBjb
+</pre>
 
 Note
 <pre>
