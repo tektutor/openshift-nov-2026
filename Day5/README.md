@@ -138,3 +138,23 @@ vault write auth/ocp/role/shop-app \
 '
 ```
 
+## Info - Ingress Overview
+<pre>
+- It is not a service
+- It is a set of forwarding rules
+</pre>
+
+## Info - Ingress vs Service
+<pre>
+- Behind an Ingress, there will be multiple services as backend
+- each service behind ingress can point to group of pods of totally different types of applications
+- Behind a Service, there will be multiple pods as backend, every Pod belongs to the same deployment
+</pre>
+
+## Info - Ingress vs Route
+<pre>
+- Ingress provides a user-friendly url just like Route
+- Route is an Openshift feature, developed on top of Kubernetes Ingress
+- Behind a Route, normally there will a single Service ( i.e ClusterIP, NodePort or LoadBalancer Service )
+- Behind an Ingress, normally there can be any number of Services which points to pods from different deployment
+</pre>
