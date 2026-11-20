@@ -57,7 +57,7 @@ oc get nodes -o wide
 
 ## Info - Kindly complete the post-test from Cloud lab machine and confirm in the chat
 ```
-[https://forms.cloud.microsoft/r/qUeUxwrQcp](https://forms.cloud.microsoft/r/jkD63EYQhD)
+https://forms.cloud.microsoft/r/jkD63EYQhD
 ```
 ## Info - Kindly share your training feedback here
 <pre>
