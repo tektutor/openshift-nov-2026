@@ -158,3 +158,23 @@ vault write auth/ocp/role/shop-app \
 - Behind a Route, normally there will a single Service ( i.e ClusterIP, NodePort or LoadBalancer Service )
 - Behind an Ingress, normally there can be any number of Services which points to pods from different deployment
 </pre>
+
+## Info - What are the components we need in Openshift to make an INgress work?
+<pre>
+There are 3 critical pieces/components
+1. Ingress ( Routing rules )
+   - this is the responsibility of the Architect or Dev Team
+
+2. Ingress Controller
+   - examples
+     - HAProxy Ingress Controller
+     - F5 Ingress Controller
+     - Traefik Ingress Controller
+     - Nginx Ingress Controller
+   
+3. Load Balancer
+   - HAProxy
+   - F5
+   - Nginx
+   - Traefik
+</pre>
