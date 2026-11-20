@@ -28,6 +28,25 @@ oc apply -f nginx-route.yml
 oc get pods -o yaml | grep image
 ```
 
+Let's upgrade the nginx from v1.25 to v1.26 using rolling update
+```
+cat nginx-deploy | grep image
+sed -i "s/1\.25/1\.26/g" nginx-deploy.yml
+cat nginx-deploy | grep image
+
+oc apply -f nginx-deploy.yml
+oc get rs
+oc get pods
+oc get pods -o yaml | grep image
+
+oc rollout status deploy/nginx
+oc rollout history deploy/nginx
+oc rollout undo deploy/nginx
+oc rollout status deploy/nginx
+
+oc get pods -o yaml | grep image
+```
+
 ## Info - External Secrets Operator (ESO)
 <pre>
 - In order to extract confidential data from Vault to Openshift secrets, Red Hat
