@@ -1,5 +1,33 @@
 # Day 5
 
+## Info - Rolling Update
+<pre>
+- Rolling update is a Kubernetes feature that also works in Openshift
+- It helps us upgrade our already deployed application from one version to other without any downtime
+- If required we can even rollback to previous stable version on need basis
+</pre>
+
+## Lab - Rolling update
+Let's deploy nginx version 1.25 initially
+```
+oc delete project jegan1
+oc new-project jegan1
+
+oc create deploy nginx --image=image-registry.openshift-image-registry.svc:5000/openshift/bitnami-nginx:1.25 --replicas=3 --dry-run=client -o yaml
+oc create deploy nginx --image=image-registry.openshift-image-registry.svc:5000/openshift/bitnami-nginx:1.25 --replicas=3 --dry-run=client -o yaml > nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+
+oc expose deploy/nginx --port=8080 --dry-run=client -o yaml
+oc expose deploy/nginx --port=8080 --dry-run=client -o yaml > nginx-svc.yml
+oc apply -f nginx-svc.yml
+
+oc expose svc/nginx --dry-run=client -o yaml 
+oc expose svc/nginx --dry-run=client -o yaml > nginx-route.yml
+oc apply -f nginx-route.yml
+
+oc get pods -o yaml | grep image
+```
+
 ## Info - External Secrets Operator (ESO)
 <pre>
 - In order to extract confidential data from Vault to Openshift secrets, Red Hat
