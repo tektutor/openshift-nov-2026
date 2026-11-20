@@ -58,12 +58,24 @@ oc get pods -n vault          # vault-0 should be Running 1/1
 oc get svc -n vault           # service "vault" on port 8200
 oc get route -n vault         # UI URL
 
+# Fix our route
+oc patch route vault -n vault --type=merge \
+  -p '{"spec":{"tls":{"termination":"edge","insecureEdgeTerminationPolicy":"Redirect"}}}'
+
 # There should be service in this pattern
 http://vault.vault.svc:8200
 The format is <service>.<namespace>.svc:<port>
 
-oc exec -it vault-0 -n vault -- sh
+oc exec -n vault vault-0 -- sh -c '
 export VAULT_TOKEN=root
+
+vault kv put secret/shop/db username=shopuser password="S3cr3t!2026"
+
+vault policy write shop-read - <<EOF
+path "secret/data/shop/*" {
+  capabilities = ["read"]
+}
+EOF
 
 vault auth enable -path=ocp kubernetes
 
@@ -76,8 +88,6 @@ vault write auth/ocp/role/shop-app \
     audience=vault \
     policies=shop-read \
     ttl=20m
-
-
-
+'
 ```
 
