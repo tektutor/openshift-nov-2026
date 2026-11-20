@@ -178,3 +178,30 @@ There are 3 critical pieces/components
    - Nginx
    - Traefik
 </pre>
+
+## Lab - Ingress
+```
+# Deploy hello microservice
+cd ~/openshift-nov-2026
+git pull
+cd Day5/ingress
+oc apply -f hello-deploy.yml
+oc apply -f hello-svc.yml
+
+# Deploy nginx
+oc apply -f nginx-deploy.yml
+oc apply -f nginx-svc.yml
+
+# Deploy ingress
+oc apply -f ingress.yml
+
+oc get svc
+oc describe svc/hello
+oc describe svc/nginx
+
+oc get ingress
+
+# Testing
+curl http://tektutor.apps.ocp4.palmeto.org/nginx
+curl http://tektutor.apps.ocp4.palmeto.org/hello
+```
