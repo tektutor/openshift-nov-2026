@@ -48,7 +48,9 @@ helm install vault hashicorp/vault \
   --set global.openshift=true \
   --set server.dev.enabled=true \
   --set server.route.enabled=true \
-  --set server.route.host=""
+  --set server.route.host="" \
+  --set server.image.repository=public.ecr.aws/hashicorp/vault \
+  --set injector.enabled=false
 
 # Check it
 oc get pods -n vault          # vault-0 should be Running 1/1
