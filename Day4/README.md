@@ -40,13 +40,12 @@ curl http://hello-jegan1.apps.ocp4.palemeto.org
 oc delete project jegan1
 
 oc new-project jegan1
-oc new-app --name=hello https://github.com/tektutor/spring-ms.git --strategy=source
+oc new-app --name=hello registry.access.redhat.com/ubi8/openjdk-17~https://github.com/tektutor/spring-ms.git --strategy=source
 oc expose svc/hello
 
 oc logs -f bc/hello
 oc get route
 curl http://hello-jegan1.apps.ocp4.palemeto.org
-
 ```
 
 ## Lab - Building SpringBoot application from TekTutor Code Repository and deploying the application into Openshift
